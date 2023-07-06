@@ -3,7 +3,6 @@
 import { Jost } from "next/font/google";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import flagsmith from "flagsmith/isomorphic";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -36,7 +35,6 @@ export default function Page() {
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    flagsmith.setTrait("profession", user.position); // setting the "profession" trait as the one selected by user
     router.push("/about?name=" + user.name + "&position=" + user.position);
   };
 
